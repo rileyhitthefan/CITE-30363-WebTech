@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/539ad7f1e0.js" crossorigin="anonymous"></script>
+    <title>war</title>
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen p-4 mr-4">
+        <!-- sidebar -->
+        <aside class="w-64 bg-white shadow-md p-5 rounded-3xl flex flex-col justify-between mr-4">
+            <div>
+                <div class="flex items-center space-x-2 mb-8">
+                    <div>
+                        <i class="fa-solid fa-fan text-green-600"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-l font-bold text-violet-500">PeerEval</h2>
+                        <p class="text-sm text-gray-500">TCU Senior Design</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li class="mb-4 p-2 rounded-md hover:bg-purple-100">
+                            <i class="fa-solid fa-clipboard-list text-violet-500"></i> 
+                            Weekly Activity Report
+                        </li>
+                        <li class="mb-4 p-2 rounded-md hover:bg-purple-100">
+                            <i class="fa-solid fa-award text-violet-500"></i>
+                            Peer Evaluation
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <button class = "text-stone-400">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <br>
+                Log Out
+            </button>
+        </aside>
+
+        <!-- main -->
+        <main class="flex flex-none flex-col ml-4">
+            <header class="flex justify-between items-center mb-4">
+                <h1 class="text-l text-blue-600 font-semibold">Weekly Activity Report</h1>
+                <div class="flex items-center space-x-4 flex-1 justify-center">
+                    <!-- search Bar -->
+                    <div class="relative w-80">
+                        <input type="text" placeholder="Search" class="pl-8 pr-4 py-2 w-full rounded-full focus:outline-none focus:ring-2 focus:ring-purple-400">
+                        <svg class="absolute left-2 top-2.5 w-4 h-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A8.5 8.5 0 1011.5 20a8.5 8.5 0 005.15-1.85z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <img src="https://via.placeholder.com/40" alt="User Avatar" class="w-10 h-10 rounded-full border border-gray-300">
+                    <div class="flex flex-col text-left">
+                        <span class="text-base">John Doe</span>
+                        <span class="text-sm">j.doe@tcu.edu</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="flex flex-none basis-full p-6 bg-white rounded-3xl shadow-md">
+                <!-- table header -->
+                <div class="p-6 rounded-lg">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-lg font-semibold">
+                            September 19 - September 26, 2022
+                            <i class="fa-solid fa-calendar-days text-violet-500"></i>
+                        </h2>
+                        <div class="flex space-x-4">
+                            <button class="bg-violet-500 text-sky-200 px-2 py-1 rounded-full">
+                                <i class="fa-solid fa-circle-plus mr-2"></i>
+                                New task
+                            </button>
+                            <button class="bg-violet-500 text-sky-200 px-2 py-1 rounded-full">
+                                <i class="fa-solid fa-file-arrow-down mr-2"></i>
+                                Download
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <table class="w-full border-collapse">
+                        <thead>
+                            <tr class="text-center font-semibold border-b-2 border-gray-500">
+                                <th class="p-2 font-semibold">ID</th>
+                                <th class="p-2 font-semibold">Category</th>
+                                <th class="p-2 font-semibold">Task</th>
+                                <th class="p-2 font-semibold">Description</th>
+                                <th class="p-2 font-semibold">Planned Hrs</th>
+                                <th class="p-2 font-semibold">Actual Hrs</th>
+                                <th class="p-2 font-semibold">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center border-b border-gray-300">
+                                <td class="p-2">1</td>
+                                <td class="p-2">
+                                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="px-5 py-2.5 text-center inline-flex items-center" type="button">Doc<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                                    </svg>
+                                    </button>
+                                    
+                                    <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
+                                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Doc</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Research</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bug</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Feature</a>
+                                        </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="p-2">Update Use Cases</td>
+                                <td class="p-2">Rewrite the update vocab use case</td>
+                                <td class="p-2">1</td>
+                                <td class="p-2">1.5</td>
+                                <td class="p-2">
+                                    <span class="inline-flex items-center bg-green-100 text-emerald-600 text-sm font-medium px-2.5 py-0.5 rounded-full">
+                                        <span class="w-2 h-2 me-1 bg-emerald-600 rounded-full"></span>
+                                        Done
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="text-center border-b-2 border-gray-500">
+                                <td class="p-2">2</td>
+                                <td class="p-2">
+                                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="px-5 py-2.5 text-center inline-flex items-center" type="button">Research<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                                    </svg>
+                                    </button>
+                                    
+                                    <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
+                                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Doc</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Research</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bug</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Feature</a>
+                                        </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="p-2">Review Vue.js</td>
+                                <td class="p-2">Review old projects using Vue.js to understand data-binding and Vue template</td>
+                                <td class="p-2">2</td>
+                                <td class="p-2">2</td>
+                                <td class="p-2">
+                                    <span class="inline-flex items-center bg-green-100 text-emerald-600 text-sm font-medium px-2.5 py-0.5 rounded-full">
+                                        <span class="w-2 h-2 me-1 bg-emerald-600 rounded-full"></span>
+                                        Done
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="text-center border-b border-gray-300">
+                                <td class="p-2">3</td>
+                                <td class="p-2">
+                                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="px-5 py-2.5 text-center inline-flex items-center" type="button">Bug<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                                    </svg>
+                                    </button>
+                                    
+                                    <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
+                                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Doc</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Research</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bug</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Feature</a>
+                                        </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="p-2">Resolve CORS</td>
+                                <td class="p-2">Resolve CORS error & test api calls in front-end</td>
+                                <td class="p-2">3</td>
+                                <td class="p-2">N/A</td>
+                                <td class="p-2">
+                                    <span class="inline-flex items-center bg-orange-100 text-orange-500 text-sm font-medium px-2.5 py-0.5 rounded-full">
+                                        <span class="w-2 h-2 me-1 bg-orange-500 rounded-full"></span>
+                                        Ongoing
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="text-center border-b-2 border-gray-500">
+                                <td class="p-2">4</td>
+                                <td class="p-2">
+                                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="px-5 py-2.5 text-center inline-flex items-center" type="button">Feature<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                                    </svg>
+                                    </button>
+                                    
+                                    <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
+                                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Doc</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Research</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bug</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Feature</a>
+                                        </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="p-2">Update Vocab</td>
+                                <td class="p-2">Implement update vocab API</td>
+                                <td class="p-2">3</td>
+                                <td class="p-2">5</td>
+                                <td class="p-2">
+                                    <span class="inline-flex items-center bg-green-100 text-emerald-600 text-sm font-medium px-2.5 py-0.5 rounded-full">
+                                        <span class="w-2 h-2 me-1 bg-emerald-600 rounded-full"></span>
+                                        Done
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

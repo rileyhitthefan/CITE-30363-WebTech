@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+	To Students:
+	The only place you need to work on in this page is the JS function bind(data) 
+												----a humble horned frog
+-->
+<head>
+	<meta charset="UTF-8">
+	<title>Simple Data Binding</title>
+	<style>
+        table {
+            border: 1px solid;
+            margin: auto;
+            width: 500px;
+        }
+
+        td, th {
+            text-align: center;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+	<!-- DO NOT change anything within <div id="app"> tag -->
+	<div id="app">
+		<h1>An Introduction to {{book}}</h1>
+		<div>
+			<p>
+				{{book}} is a series of fantasy novels written by British author {{author}}. The novels chronicle the lives of a young wizard, {{harry.name}}, and his friends {{hermione.name}} and {{ron.name}}, all of whom are students at {{school}}. The main story arc concerns Harry's struggle against {{antagonist}}, a dark wizard who intends to become immortal, overthrow the wizard governing body known as the Ministry of Magic and subjugate all wizards and {{Muggles}} (non-magical people). One book is worth ${{price}}.
+			</p>
+			<p>
+				
+			</p>
+		</div>
+	
+		<table id="hogwarts">
+		    <caption>{{school}} Student Table</caption>
+		    <tr>
+		        <th>ID</th>
+		        <th>Name</th>
+		        <th>Gender</th>
+		        <th>Address</th>
+		    </tr>
+		    <tr>
+		        <td>{{harry.id}}</td>
+		        <td>{{harry.name}}</td>
+		        <td>{{harry.gender}}</td>
+		        <td>{{harry.address}}</td>
+		    </tr>
+		    <tr>
+		        <td>{{hermione.id}}</td>
+		        <td>{{hermione.name}}</td>
+		        <td>{{hermione.gender}}</td>
+		        <td>{{hermione.address}}</td>
+		    </tr>
+		</table>
+	</div>
+	<!-- DO NOT change anything within <div id="app"> tag -->
+	<div>
+		The central character in the series is {{harry.name}}, a boy who lives in the fictional town of Little Whinging, Surrey with his aunt, uncle, and cousin – the Dursleys – and discovers at the age of eleven that he is a wizard, though he lives in the ordinary world of non-magical people known as Muggles. The wizarding world exists parallel to the Muggle world, albeit hidden and in secrecy. His magical ability is inborn, and children with such abilities are invited to attend exclusive magic schools that teach the necessary skills to succeed in the wizarding world.
+	</div>
+
+	<script>
+		//data you need
+		let data = {
+			book: "Harry Potter",
+			school: "Hogwarts School of Witchcraft and Wizardry",
+			antagonist: "Lord Voldemort",
+			harry: {id: "1", name: "Harry Potter", gender: "M", address: "1001 Main Street, London"},
+			ron: {id: "2", name: "Ron Weasley", gender: "M", address: "10012 Main Street, London"},
+			hermione: {id: "3", name: "Hermione Granger", gender: "F", address: "1003 Main Street, London"},
+			author: "JK Rowling",
+			price: 50.5,
+		};
+		//Implement this bind function
+		function bind(data) {
+			let app = document.getElementById("app")
+			let html = app.innerHTML
+
+			function matchPattern(data, pattern){
+				return pattern.split('.').reduce((obj, key) => {
+					if (obj && obj[key] !== undefined) {
+						return obj[key]
+					} else {
+						return ''
+					}
+				}, data)
+			}
+
+			html = html.replace(/\{\{(.*?)\}\}/g, (match, pattern) => {
+				return matchPattern(data, pattern.trim())
+			})
+
+			app.innerHTML = html
+		}
+		//invoke the function
+		bind(data);
+	</script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+body {
+    font-family: "Roboto Slab", serif;
+    margin: 0;
+    background-color: #f8f8f8;
+}
+
+header {
+    /* border: 1px solid #2104fb; */
+    height: 500px;
+    background-image: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url("../images/header.jpg");
+    /* position: top; */
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+header h1 {
+    font-size: 36px;
+    color: white;
+    max-width: 780px;
+}
+
+.author {
+    /* border: 1px solid #2104fb; */
+    position: absolute;
+    transform: translateY(155%);
+    text-align: center;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+}
+
+.author p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    color: rgb(51,51,51);
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.author img {
+    width:25%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+main{
+    display: flex;
+}
+
+article.item {
+    margin-top: 120px;
+    /* border: 1px solid #9C27B0; */
+    order: 2;
+    flex: 3;
+}
+
+.restaurant {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+    flex: 4;
+}
+
+.restaurant h2 {
+    color: rgb(51, 51, 51);
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.restaurant h6 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-decoration: none;   
+}
+
+.restaurant a {
+    text-decoration: none;
+    color: #42b4d6;
+}
+
+.restaurant h6:hover {
+    text-decoration: underline;
+    text-decoration-color: #42b4d6;
+}
+
+.restaurant p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    line-height: 32px;
+    color: rgb(51,51,51);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* border: 1px solid #9C27B0; */
+}
+
+.restaurant img {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.sidebar-left {
+    margin-top: 120px;
+    /* border: 1px solid #d92222; */
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    order: 1;
+    flex: 1;
+}
+
+.sidebar-left div {
+    /* border: 1px solid #d92222; */
+    margin-right: 40px;
+    color: rgba(0, 0, 0, 0.25);
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.sidebar-right {
+    margin-top: 120px;
+    order: 3;
+    flex: 1;
+}
