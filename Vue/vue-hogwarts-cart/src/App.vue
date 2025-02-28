@@ -63,7 +63,7 @@
 </template>
 
 <script setup>
-    import { computed, ref } from 'vue'
+    import { computed, ref, watch } from 'vue'
 
     let username = 'Harry'
     let shoppingCartItems = ref([
@@ -153,6 +153,15 @@
     //         }
     //     })
     // }
+    
+    watch(shoppingCartItems, () => {
+        localStorage.setItem(
+            'hogwartsShoppingCart',
+            JSON.stringify(shoppingCartItems.value)
+        )
+    },
+    { deep: true }
+    )
 
 </script>
 
