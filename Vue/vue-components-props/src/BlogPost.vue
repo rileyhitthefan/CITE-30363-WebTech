@@ -17,7 +17,7 @@ const props = defineProps(['id', 'blogPostTitle', 'blogPostContent'])
 // console.log(props.blogPostTitle)
 // defineProps({
 //   id: Number,
-//   blogPostTitle: String,
+//   blogPostTitle: String, 
 //   blogPostContent: String
 // })
 </script>
